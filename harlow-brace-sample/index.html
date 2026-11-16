@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="lmf-slug" content="harlow-brace-sample">
+<meta name="lmf-build" content="d51100c2a1da">
+<title>Harlow and Brace: your website scored</title>
+<style>
+/* The one stylesheet every report page uses. Loaded into  by lmf.load_template,
+   so a change here changes all seven shapes at once. No dashes used as punctuation in any copy. */
+:root{--bg:#0b0f17;--card:#121826;--card2:#0e131e;--line:#232b3b;--text:#e8ecf3;--muted:#9aa4b8;--faint:#6b7488;--amber:#fbbf24;--red:#f87171;--green:#34d399;--accent:#8b7cf6;--accent-soft:#a89cf8}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-soft)}
+.wrap{max-width:820px;margin:0 auto;padding:28px 20px 110px}
+.section{margin-top:28px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px}
+.eyebrow{display:inline-block;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+h1{font-size:clamp(28px,5vw,40px);line-height:1.12;margin:18px 0 12px;letter-spacing:-.02em}
+h2{font-size:22px;margin:0 0 6px;letter-spacing:-.01em}
+h3{font-size:17px;margin:0 0 6px}
+.kicker{font-size:12.5px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+.k-amber{color:var(--amber)}.k-red{color:var(--red)}.k-green{color:var(--green)}.k-accent{color:var(--accent-soft)}
+.green{color:var(--green)}.amber{color:var(--amber)}.red{color:var(--red)}
+.lede{font-size:18px;color:var(--muted);margin:0 0 6px;max-width:660px}
+.meta{margin-top:14px;font-size:13.5px;color:var(--faint)}
+.note{font-size:13.5px;color:var(--faint);margin-top:12px}
+.item{padding:16px 0;border-top:1px solid var(--line)}
+.item:first-of-type{border-top:0;padding-top:4px}
+.item p{margin:0;color:var(--muted)}
+.evidence{display:block;margin-top:8px;font-size:13px;color:var(--faint);border-left:2px solid var(--line);padding-left:10px}
+.math{display:block;margin-top:8px;font-size:13.5px;color:var(--faint);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;border-left:2px solid var(--accent);padding-left:10px}
+ol.steps{padding-left:0;list-style:none;margin:0;counter-reset:s}
+ol.steps li{position:relative;padding:14px 0 14px 46px;border-top:1px solid var(--line)}
+ol.steps li:first-child{border-top:0;padding-top:4px}
+ol.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:14px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:14px}
+ol.steps li:first-child::before{top:4px}
+ol.steps strong{display:block;margin-bottom:4px}
+ol.steps span{color:var(--muted)}
+ul.bul{padding-left:20px;margin:8px 0 6px}
+ul.bul li{margin:6px 0;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0 20px}
+.stat{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px}
+.stat .label{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--faint)}
+.stat .num{font-size:34px;font-weight:800;line-height:1.1;margin:6px 0 4px}
+.stat .sub{font-size:13px;color:var(--muted)}
+.big{font-size:clamp(38px,8vw,60px);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin:6px 0 8px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:14px}
+.tile{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px}
+.tile strong{display:block;margin-bottom:4px}
+.tile span{color:var(--muted);font-size:14.5px}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14.5px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--faint)}
+.tablewrap{overflow-x:auto}
+.pill{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.p-green{background:rgba(52,211,153,.16);color:var(--green)}
+.p-amber{background:rgba(251,191,36,.16);color:var(--amber)}
+.p-red{background:rgba(248,113,113,.16);color:var(--red)}
+.p-grey{background:rgba(154,164,184,.14);color:var(--muted)}
+.value{margin:18px 0 0;padding:16px 18px;border-left:3px solid var(--accent);background:var(--card2);border-radius:0 12px 12px 0;color:var(--muted)}
+.value strong{color:var(--text)}
+.panel{margin-top:16px;padding:16px 18px;background:var(--card2);border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:14.5px}
+.panel strong{color:var(--text)}
+.quote{margin:14px 0 0;padding:14px 18px;border-left:3px solid var(--line);color:var(--muted);font-size:15px}
+.answer{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:12px}
+.answer .head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px;color:var(--faint);margin-bottom:10px}
+.answer .body{white-space:pre-wrap;font-size:14.5px;color:var(--muted);max-height:320px;overflow:auto}
+.mega{display:block;background:linear-gradient(135deg,#0f9f6e,#34d399);color:#03130c;text-decoration:none;border-radius:16px;padding:20px 22px;box-shadow:0 12px 40px rgba(52,211,153,.18)}
+.mega .top{font-size:20px;font-weight:800}
+.mega .sub{font-size:14px;opacity:.85;margin-top:4px}
+.tag{display:inline-block;font-size:12px;color:var(--faint);margin-top:6px}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;border-radius:12px;padding:14px 20px;margin-top:8px}
+.btn:hover{background:var(--accent-soft)}
+.links{margin-top:14px;font-size:14.5px}
+.sticky{position:fixed;left:0;right:0;bottom:0;display:none;padding:12px 16px;background:rgba(11,15,23,.92);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+.sticky a{display:block;text-align:center;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;border-radius:12px;padding:14px}
+@media (max-width:640px){.sticky{display:block}.card{padding:22px 18px}}
+footer{margin-top:40px;text-align:center;font-size:13px;color:var(--faint)}
+
+.dial{display:flex;align-items:baseline;gap:10px;margin:10px 0 2px}
+.dial .n{font-size:clamp(46px,10vw,72px);font-weight:800;line-height:1;letter-spacing:-.03em}
+.dial .of{font-size:20px;color:var(--faint)}
+.bar{height:10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);overflow:hidden;margin:14px 0 6px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,#8b7cf6,#34d399)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="card">
+    <span class="eyebrow">Prepared for Dana Whitlock at Harlow and Brace</span>
+    <h1>Harlow and Brace: your website is doing half the job</h1>
+    <div class="dial"><span class="n">43</span><span class="of">out of 100</span><span class="pill p-amber">Leaking visitors</span></div>
+    <div class="bar"><i style="width:43%"></i></div>
+    <p class="lede">Harlow and Brace fit and service commercial flooring for schools and care homes. The site explains the work well and then leaves the visitor with nowhere obvious to go.</p>
+    <div class="meta">12 checks judged from your own pages. Prepared by the team on 15 November 2026.</div>
+  </header>
+
+  <section class="section card">
+    <div class="kicker k-accent">Part 1</div>
+    <h2>The scorecard</h2>
+    <p class="lede">Fourteen things a first time visitor needs before they will get in touch. Here is how your site does on each.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>What we looked for</th><th>Verdict</th><th>What we saw</th></tr></thead>
+        <tbody>
+          <tr><td>One clear next step above the fold</td><td><span class="pill p-red">No</span></td><td>The only button on the home page says Learn more, and it goes to a page of the same text.</td></tr>
+          <tr><td>It says what they do in plain words</td><td><span class="pill p-green">Yes</span></td><td>The first line says what you fit and who for, with no jargon.</td></tr>
+          <tr><td>Who it is for is named</td><td><span class="pill p-green">Yes</span></td><td>Schools and care homes are named in the first paragraph.</td></tr>
+          <tr><td>Proof from real customers</td><td><span class="pill p-amber">Partly</span></td><td>Two logos sit in the footer but there is no quote and no named job.</td></tr>
+          <tr><td>A reason to pick them over the next one</td><td><span class="pill p-red">No</span></td><td>Nothing on the site says why you rather than the next fitter.</td></tr>
+          <tr><td>Some signal about how buying works</td><td><span class="pill p-red">No</span></td><td>No range, no guide, and no line explaining how a quote is put together.</td></tr>
+          <tr><td>Contact details are easy to find</td><td><span class="pill p-green">Yes</span></td><td>The phone number sits in the header on every page.</td></tr>
+          <tr><td>The enquiry form is short</td><td><span class="pill p-red">No</span></td><td>The enquiry form asks nine questions including floor area and budget.</td></tr>
+          <tr><td>One call to action, not five competing</td><td><span class="pill p-amber">Partly</span></td><td>Three buttons compete in the header: call, quote and brochure.</td></tr>
+          <tr><td>The obvious questions are answered</td><td><span class="pill p-amber">Partly</span></td><td>Lead times are covered. Disruption during term time, the thing a school will ask, is not.</td></tr>
+          <tr><td>A busy person can skim it</td><td><span class="pill p-red">No</span></td><td>The services page is one block of about nine hundred words with no headings.</td></tr>
+          <tr><td>Real trust marks, not stock badges</td><td><span class="pill p-grey">Could not check</span></td><td>Two accreditation marks appear but we could not check whether they are current.</td></tr>
+          <tr><td>Nothing on it is clearly out of date</td><td><span class="pill p-green">Yes</span></td><td>The most recent job on the site is dated this year.</td></tr>
+          <tr><td>It reads on a phone</td><td><span class="pill p-grey">Could not check</span></td><td>We read the text, not the layout, so we could not judge this from the outside.</td></tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section card">
+    <div class="kicker k-green">Part 2</div>
+    <h2>The 5 fixes worth doing first</h2>
+    <ol class="steps">
+      <li><strong>Put one button on the home page that says Get a quote for your site</strong><span>It turns a reader into a named enquiry in one click instead of sending them hunting. Roughly an afternoon.</span></li>
+      <li><strong>Cut the enquiry form to name, site and phone number</strong><span>Floor area and budget are questions for the call, not for a stranger deciding whether to bother. Roughly an afternoon.</span></li>
+      <li><strong>Add two named jobs with a quote from the person who signed them off</strong><span>A care home manager believes another care home manager. Logos alone say nothing. Roughly a week.</span></li>
+      <li><strong>Answer the term time question on the services page</strong><span>It is the first thing a school asks and right now they have to ring to find out. Roughly an afternoon.</span></li>
+      <li><strong>Break the services page into five headed sections</strong><span>Nobody reads nine hundred unbroken words. They skim, find nothing, and leave. Roughly a day.</span></li>
+      
+    </ol>
+  </section>
+
+  
+  <section class="section card">
+    <div class="kicker">Part 3</div>
+    <h2>What we could not check</h2>
+    <p class="lede">2 of the checks need a look we could not do from the outside. They are not marks against you. They are the questions we would ask you.</p>
+    <div class="item"><h3>Real trust marks, not stock badges</h3><p>Two accreditation marks appear but we could not check whether they are current.</p></div>
+    <div class="item"><h3>It reads on a phone</h3><p>We read the text, not the layout, so we could not judge this from the outside.</p></div>
+    
+  </section>
+  
+
+  <section class="section card">
+    <h2>Next step</h2>
+    <p class="lede" style="margin-bottom:10px">Happy to walk through the five fixes on a short call and show you what the first one would look like.</p>
+    
+    <p>Reply to the email this page came with and we will find a time.</p>
+    
+    
+  </section>
+
+  <footer>Made for Harlow and Brace. Every mark points at something on your own pages. This page is private and not listed in search.</footer>
+</div>
+
+
+
+</body>
+</html>
